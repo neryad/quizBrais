@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="showcase">
+    <div
+      style="height: 80vh; width: 80vw; display: flex; flex-direction: column"
+      class="nes-container with-title"
+    >
+      <h1 class="title">
+        Tu puntuación es: <strong>{{ finalScore }}</strong>
+      </h1>
+      <br />
+      <div id="inputs" class="items">
+        <div class="nes-field">
+          <label for="name_field"> Tu nombre</label>
+          <input
+            [(ngModel)]="name"
+            class="nes-input"
+            type="text"
+            name=""
+            id="name_field"
+            maxlength="10"
+          />
+        </div>
+        <br />
+        <label class="labelWarning" *ngIf="isEmpty" for=""> Llenar campo</label>
+        <br />
+        <div id="buttons" class="item">
+          <button
+            [disabled]="isEmpty"
+            (click)="saveScore()"
+            type="button"
+            class="nes-btn is-primary"
+          >
+            Guardar puntos
+          </button>
+          <button
+            [routerLink]="['/play/start']"
+            type="button"
+            class="nes-btn is-success"
+          >
+            Volver a jugar
+          </button>
+          <button [routerLink]="['/']" type="button" class="nes-btn">
+            Ir a inicio
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section>
+    <!-- <button
+      type="button"
+      class="nes-btn is-primary"
+      onclick="document.getElementById('dialog-rounded').showModal();"
+    >
+      Open rounded dialog
+    </button> -->
+    <dialog #dialogRounded class="nes-dialog is-rounded" id="dialog-rounded">
+      <form method="dialog">
+        <p class="title">Info</p>
+        <p>Su puntuación ha sido guardad, volverá a la pantalla inicial</p>
+        <!-- <menu class="dialog-menu">
+          <button
+            class="nes-btn"
+            onclick="document.getElementById('dialog-rounded').closeModal();"
+          >
+            Cancel
+          </button>
+          <button class="nes-btn is-primary" (click)="goHome()">
+            ir a inició
+          </button>
+        </menu> -->
+      </form>
+    </dialog>
+  </section>
+</div>

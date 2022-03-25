@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="showcase">
+    <a [routerLink]="['/']"> Inicio </a>
+    <div style="height: 80vh; width: 80vw" class="nes-container with-title">
+      <h1 class="title">Puntuación</h1>
+      <div style="margin-left: -3rem" class="lists">
+        <ul class="nes-list">
+          <li *ngIf="isEmpty">
+            <!-- <i class="nes-icon coin is-small"></i> -->
+            No existe puntuación
+          </li>
+          <li *ngFor="let player of playerArr; let i = index">
+            <i class="nes-icon coin is-small"></i>
+            {{ player["name"] }} <label for="">{{ player["score"] }}</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- nes-icon trophy is-large" -->

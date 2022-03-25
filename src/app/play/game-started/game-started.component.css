@@ -1,0 +1,6 @@
+.progress-div {
+  display: flex;
+  flex-direction: column;
+  height: 5rem;
+  align-items: center;
+}
